@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRYSTAL NAIL STUDIO | Luxury Beauty Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #c4a484; /* Soft Taupe/Gold */
+            --bg: #0f0f0f;
+            --text: #ffffff;
+        }
+        body { 
+            background-color: var(--bg); 
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .reveal { opacity: 0; transform: translateY(40px); }
+        
+        .accent-text { color: var(--accent); }
+        .accent-border { border-color: var(--accent); }
+        
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 8rem);
+            line-height: 0.9;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .image-container img {
+            transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Luxury Grain Overlay */
+        .grain::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body class="grain">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 flex justify-between items-center px-8 md:px-16 py-10 mix-blend-difference">
+        <div class="serif text-3xl font-light tracking-tighter uppercase">CRYSTAL NAIL STUDIO</div>
+        <div class="hidden md:flex gap-12 text-[10px] tracking-[0.3em] uppercase font-light">
+            <a href="#about" class="hover:opacity-50 transition">O nas</a>
+            <a href="#services" class="hover:opacity-50 transition">Usługi</a>
+            <a href="#contact" class="hover:opacity-50 transition">Kontakt</a>
+        </div>
+        <a href="tel:Brak telefonu" class="text-[10px] tracking-[0.2em] uppercase border-b border-white pb-1 hover:opacity-50 transition">
+            Book: Brak telefonu
+        </a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen flex flex-col justify-center px-8 md:px-16">
+        <div class="z-10">
+            <h2 class="serif italic text-2xl md:text-3xl mb-4 accent-text reveal">Luksus i Pielęgnacja na Najwyższym Poziomie</h2>
+            <h1 class="hero-title serif font-light uppercase tracking-tighter mb-8 reveal">
+                CRYSTAL NAIL STUDIO
+            </h1>
+            <p class="max-w-md text-sm leading-relaxed opacity-60 font-light reveal">
+                Odkryj oazę piękna i relaksu. Nasz luksusowy salon oferuje spersonalizowane zabiegi fryzjerskie, kosmetyczne oraz pielęgnacyjne wykonywane przez najlepszych ekspertów w branży.
+            </p>
+        </div>
+        
+        <!-- Large Decorative Background Text -->
+        <div class="absolute right-0 bottom-20 serif text-[20vw] opacity-[0.02] pointer-events-none uppercase leading-none pr-8">
+            Est. 2024
+        </div>
+    </section>
+
+    <!-- Split Section: Image & Content -->
+    <section id="about" class="py-32 px-8 md:px-16 grid md:grid-cols-2 gap-24 items-center">
+        <div class="image-container aspect-[3/4] reveal">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80" 
+                 class="w-full h-full object-cover" alt="Salon Interior">
+        </div>
+        <div class="space-y-12">
+            <div class="reveal">
+                <h3 class="serif text-5xl md:text-6xl mb-8 leading-tight">Sztuka piękna <br><span class="italic">zdefiniowana na nowo.</span></h3>
+                <p class="text-stone-400 font-light leading-relaxed">
+                    Wierzymy, że prawdziwe piękno tkwi w szczegółach. Od lat tworzymy wyjątkowe miejsce, gdzie profesjonalizm łączy się z luksusem, a każdy zabieg staje się niezapomnianym rytuałem dla ciała i zmysłów.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-8 reveal">
+                <div>
+                    <div class="serif text-3xl mb-2 accent-text italic">100%</div>
+                    <div class="text-[10px] uppercase tracking-widest opacity-40">Satysfakcji</div>
+                </div>
+                <div>
+                    <div class="serif text-3xl mb-2 accent-text italic">Premium</div>
+                    <div class="text-[10px] uppercase tracking-widest opacity-40">Kosmetyki</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-[#141414]">
+        <div class="px-8 md:px-16 mb-20">
+            <h3 class="serif text-5xl reveal italic">Nasze Usługi</h3>
+        </div>
+        <div class="divide-y divide-white/10 border-y border-white/10">
+            <!-- Dynamically generated services from AI -->
+            
+            <div class="py-12 flex justify-between items-center px-8 md:px-16 hover:bg-white/5 transition reveal">
+                <div>
+                    <h4 class="serif text-3xl font-light">Strzyżenie & Stylizacja Premium</h4>
+                    <p class="text-xs text-stone-500 mt-2 font-light">Ekskluzywne cięcie dopasowane do kształtu twarzy i struktury włosa.</p>
+                </div>
+                <div class="serif text-2xl accent-text italic">od 150 zł</div>
+            </div>
+            <div class="py-12 flex justify-between items-center px-8 md:px-16 hover:bg-white/5 transition reveal">
+                <div>
+                    <h4 class="serif text-3xl font-light">Koloryzacja Balayage & Gloss</h4>
+                    <p class="text-xs text-stone-500 mt-2 font-light">Zaawansowane techniki rozjaśniania z organiczną ochroną włosa.</p>
+                </div>
+                <div class="serif text-2xl accent-text italic">od 350 zł</div>
+            </div>
+            <div class="py-12 flex justify-between items-center px-8 md:px-16 hover:bg-white/5 transition reveal">
+                <div>
+                    <h4 class="serif text-3xl font-light">Rytuał Pielęgnacyjny Kérastase</h4>
+                    <p class="text-xs text-stone-500 mt-2 font-light">Głęboka rekonstrukcja i nawilżenie z masażem skóry głowy.</p>
+                </div>
+                <div class="serif text-2xl accent-text italic">od 200 zł</div>
+            </div>
+        
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-8 md:px-16">
+        <div class="grid md:grid-cols-2 gap-24">
+            <div class="reveal">
+                <h3 class="serif text-5xl mb-12">Odwiedź nas w <br><span class="italic">Poznań</span></h3>
+                <div class="space-y-10">
+                    <div class="flex gap-6 items-start">
+                        <i data-lucide="map-pin" class="accent-text w-5 h-5"></i>
+                        <div>
+                            <div class="text-[10px] uppercase tracking-widest opacity-40 mb-2">Adres</div>
+                            <div class="font-light">None, Poznań</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <i data-lucide="clock" class="accent-text w-5 h-5"></i>
+                        <div>
+                            <div class="text-[10px] uppercase tracking-widest opacity-40 mb-2">Godziny</div>
+                            <div class="font-light">Poniedziałek - Piątek: 09:00 - 20:00 | Sobota: 09:00 - 15:00</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <i data-lucide="phone" class="accent-text w-5 h-5"></i>
+                        <div>
+                            <div class="text-[10px] uppercase tracking-widest opacity-40 mb-2">Kontakt</div>
+                            <div class="font-light text-2xl serif italic tracking-wide">Brak telefonu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-none overflow-hidden h-[600px] grayscale contrast-125 reveal">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    style="border:0" 
+                    src="https://maps.google.com/maps?q=None,Poznań&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-8 md:px-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
+        <div class="serif text-2xl font-light uppercase tracking-tighter opacity-30">CRYSTAL NAIL STUDIO</div>
+        <div class="text-[10px] tracking-[0.3em] uppercase opacity-20">
+            &copy; 2024 CRYSTAL NAIL STUDIO &mdash; Curated by Grodt
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Batch Reveal Animations
+        gsap.utils.toArray(".reveal").forEach(elem => {
+            gsap.to(elem, {
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 85%",
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: "power4.out"
+            });
+        });
+
+        // Parallax Effect for images
+        gsap.utils.toArray(".image-container img").forEach(img => {
+            gsap.to(img, {
+                scrollTrigger: {
+                    trigger: img,
+                    scrub: true
+                },
+                y: -50
+            });
+        });
+    </script>
+    <!-- Claim Website Banner -->
+    <div class="fixed bottom-0 w-full z-[100] bg-rose-500 border-t border-rose-600 shadow-[0_-10px_40px_rgba(244,63,94,0.3)]">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="text-white">
+                <span class="font-bold text-lg block sm:inline">Odbierz tę stronę dla swojego salonu!</span>
+                <span class="text-rose-100 text-sm sm:ml-2">Gotowa do działania. Aktywacja w 24h.</span>
+            </div>
+            <a href="https://buy.stripe.com/eVqeVc6gW2F23no0Hic7u03" class="bg-white text-rose-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition shadow-lg transform hover:-translate-y-1">
+                Kupuję stronę (500 PLN)
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
