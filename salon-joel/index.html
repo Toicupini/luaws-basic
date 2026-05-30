@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Joel | Luxury Beauty Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #E5C158; /* Premium Champagne Gold */
+            --bg: #0A0A0A;
+            --card: #121212;
+            --border: rgba(229, 193, 88, 0.08);
+            --text-color: #F8F6F0;
+        }
+        body { 
+            background-color: var(--bg); 
+            color: var(--text-color);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .serif { 
+            font-family: 'Cormorant Garamond', serif; 
+            letter-spacing: -0.01em;
+        }
+        
+        .reveal { opacity: 0; transform: translateY(40px); }
+        
+        .glass-luxury {
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-luxury:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+        
+        .hero-title {
+            font-size: clamp(3.2rem, 11vw, 9rem);
+            line-height: 0.9;
+        }
+
+        /* Champagne radial lights */
+        .ambient-gold {
+            position: absolute;
+            width: 55vw; height: 55vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(229, 193, 88, 0.05) 0%, transparent 80%);
+            pointer-events: none;
+            filter: blur(100px);
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Ambient Gold Lights -->
+    <div class="ambient-gold top-[-10%] right-[-10%]"></div>
+    <div class="ambient-gold bottom-[20%] left-[-15%]"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 flex justify-between items-center px-8 md:px-16 py-8 mix-blend-difference">
+        <div class="serif text-2xl md:text-3xl font-light tracking-widest text-white uppercase">Salon Joel</div>
+        <a href="tel:58 309 14 90" class="inline-flex items-center gap-2 bg-white/5 border border-white/10 hover:bg-white/10 text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition duration-300">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
+            58 309 14 90
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col justify-center px-8 md:px-16 pt-28 pb-20 z-10">
+        <div>
+            <h2 class="serif italic text-2xl md:text-4xl mb-4 text-[#E5C158] reveal">Luksus i Pielęgnacja na Najwyższym Poziomie</h2>
+            <h1 class="hero-title serif font-light uppercase tracking-tighter mb-8 text-white reveal leading-none">
+                Salon Joel
+            </h1>
+            <p class="max-w-md text-base leading-relaxed text-stone-300 font-light reveal">
+                Odkryj oazę piękna i relaksu. Nasz luksusowy salon oferuje spersonalizowane zabiegi fryzjerskie, kosmetyczne oraz pielęgnacyjne wykonywane przez najlepszych ekspertów w branży.
+            </p>
+        </div>
+        
+        <!-- Large Background Typography -->
+        <div class="absolute right-0 bottom-24 serif text-[22vw] opacity-[0.01] pointer-events-none uppercase leading-none pr-8">
+            Luxury
+        </div>
+    </section>
+
+    <!-- Split Section: Image & Content -->
+    <section id="o-nas" class="py-32 px-8 md:px-16 grid md:grid-cols-2 gap-24 items-center relative z-10 border-t border-white/5">
+        <div class="overflow-hidden rounded-2xl aspect-[3/4] border border-white/5 shadow-2xl reveal">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80" 
+                 class="w-full h-full object-cover transition duration-1000 hover:scale-105" alt="Salon wnętrze">
+        </div>
+        <div class="space-y-12">
+            <div class="reveal">
+                <h3 class="serif text-5xl md:text-6xl mb-8 leading-tight text-white">Sztuka Piękna <br><span class="italic text-[#E5C158]">Zdefiniowana na Nowo.</span></h3>
+                <p class="text-stone-300 font-light leading-relaxed text-lg">
+                    Wierzymy, że prawdziwe piękno tkwi w szczegółach. Od lat tworzymy wyjątkowe miejsce, gdzie profesjonalizm łączy się z luksusem, a każdy zabieg staje się niezapomnianym rytuałem dla ciała i zmysłów.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-8 border-t border-white/5 pt-8 reveal">
+                <div>
+                    <div class="serif text-4xl mb-2 text-[#E5C158] italic">100%</div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 font-bold">Rekomendacji</div>
+                </div>
+                <div>
+                    <div class="serif text-4xl mb-2 text-[#E5C158] italic">Premium</div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 font-bold">Standard</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="uslugi" class="py-32 bg-[#080808] relative z-10 border-y border-white/5">
+        <div class="px-8 md:px-16 mb-20 reveal">
+            <span class="text-xs uppercase tracking-[0.4em] text-[#E5C158] font-bold">Nasza Oferta</span>
+            <h3 class="serif text-5xl md:text-6xl mt-3 text-white italic">Rytuały Piękna</h3>
+        </div>
+        <div class="divide-y divide-white/[0.04] border-y border-white/[0.04]">
+            
+            <div class="py-12 flex justify-between items-center px-8 md:px-16 hover:bg-white/5 transition reveal">
+                <div>
+                    <h4 class="serif text-3xl font-light">Strzyżenie & Stylizacja Premium</h4>
+                    <p class="text-xs text-stone-500 mt-2 font-light">Ekskluzywne cięcie dopasowane do kształtu twarzy i struktury włosa.</p>
+                </div>
+                <div class="serif text-2xl accent-text italic">od 150 zł</div>
+            </div>
+            <div class="py-12 flex justify-between items-center px-8 md:px-16 hover:bg-white/5 transition reveal">
+                <div>
+                    <h4 class="serif text-3xl font-light">Koloryzacja Balayage & Gloss</h4>
+                    <p class="text-xs text-stone-500 mt-2 font-light">Zaawansowane techniki rozjaśniania z organiczną ochroną włosa.</p>
+                </div>
+                <div class="serif text-2xl accent-text italic">od 350 zł</div>
+            </div>
+            <div class="py-12 flex justify-between items-center px-8 md:px-16 hover:bg-white/5 transition reveal">
+                <div>
+                    <h4 class="serif text-3xl font-light">Rytuał Pielęgnacyjny Kérastase</h4>
+                    <p class="text-xs text-stone-500 mt-2 font-light">Głęboka rekonstrukcja i nawilżenie z masażem skóry głowy.</p>
+                </div>
+                <div class="serif text-2xl accent-text italic">od 200 zł</div>
+            </div>
+        
+        </div>
+    </section>
+
+    <!-- Contact & Map -->
+    <section id="kontakt" class="py-32 px-8 md:px-16 relative z-10">
+        <div class="grid md:grid-cols-12 gap-16 items-center">
+            <div class="md:col-span-5 reveal">
+                <div class="text-xs uppercase tracking-widest text-[#E5C158] font-bold mb-3">Rezerwacja Miejsc</div>
+                <h3 class="serif text-5xl mb-12 text-white">Odwiedź nas</h3>
+                <div class="space-y-8">
+                    <div class="flex gap-6 items-start">
+                        <div class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center shrink-0">
+                            <i data-lucide="map-pin" class="text-[#E5C158] w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Adres Salonu</div>
+                            <div class="font-light text-stone-200">
+Szeroka 125/126, 80-835 Gdańsk, Gdańsk</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center shrink-0">
+                            <i data-lucide="clock" class="text-[#E5C158] w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Godziny Otwarcia</div>
+                            <div class="font-light text-stone-200">Poniedziałek - Piątek: 09:00 - 20:00 | Sobota: 09:00 - 15:00</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center shrink-0">
+                            <i data-lucide="phone" class="text-[#E5C158] w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Zadzwoń do nas</div>
+                            <a href="tel:58 309 14 90" class="serif text-3xl italic text-white hover:text-[#E5C158] transition">58 309 14 90</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-7 h-[500px] rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    style="border:0; filter: invert(90%) hue-rotate(180deg);" 
+                    src="https://maps.google.com/maps?q=
+Szeroka 125/126, 80-835 Gdańsk,Gdańsk&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-8 md:px-16 bg-black/40 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10 relative z-10">
+        <div class="serif text-2xl font-light uppercase tracking-widest text-white/40">Salon Joel</div>
+        <div class="text-[10px] tracking-[0.4em] uppercase text-stone-600">
+            &copy; 2026 Salon Joel &mdash; Luxury Concept.
+        </div>
+    </footer>
+
+    <!-- Claim Website Banner -->
+    <div class="fixed bottom-0 w-full z-[100] bg-rose-500 border-t border-rose-600 shadow-[0_-10px_40px_rgba(244,63,94,0.3)]">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="text-white">
+                <span class="font-bold text-lg block sm:inline">Odbierz tę stronę dla swojego salonu!</span>
+                <span class="text-rose-100 text-sm sm:ml-2">Gotowa do działania. Aktywacja w 24h.</span>
+            </div>
+            <a href="https://buy.stripe.com/eVqeVc6gW2F23no0Hic7u03" class="bg-white text-rose-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold transition shadow-lg transform hover:-translate-y-0.5">
+                Kupuję stronę (250 PLN + 50 PLN/mies.)
+            </a>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray(".reveal").forEach(elem => {
+            gsap.to(elem, {
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 95%",
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power3.out"
+            });
+        });
+    </script>
+</body>
+</html>
